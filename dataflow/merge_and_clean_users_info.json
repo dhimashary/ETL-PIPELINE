@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "merge_and_clean_users_info",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -22,7 +22,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "Parquet1",
+						"referenceName": "sink_merged_users_info",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
@@ -83,7 +83,6 @@
 				"     broadcast: 'auto')~> join1",
 				"join1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     format: 'parquet',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
