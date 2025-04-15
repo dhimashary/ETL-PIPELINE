@@ -60,7 +60,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "csv_group_a",
+						"referenceName": "csv_group_sink",
 						"type": "DatasetReference",
 						"parameters": {
 							"file_name": {

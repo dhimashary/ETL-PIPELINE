@@ -1,5 +1,5 @@
 {
-	"name": "csv_group_a",
+	"name": "csv_group_sink",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage4",
