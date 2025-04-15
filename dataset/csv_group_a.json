@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "bank_users_info_group_a.csv",
+				"fileName": "bank_users_info_group_b.csv",
 				"container": "raw2"
 			},
 			"columnDelimiter": ",",
