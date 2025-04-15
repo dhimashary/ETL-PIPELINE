@@ -5,7 +5,10 @@
 			"referenceName": "HttpServer2",
 			"type": "LinkedServiceReference",
 			"parameters": {
-				"url_param_csv": "https://github.com/ruddra/hackathon-dataset/blob/main/bank_users_info_group_a.csv"
+				"url_param_csv": {
+					"value": "@dataset().url_param",
+					"type": "Expression"
+				}
 			}
 		},
 		"parameters": {
