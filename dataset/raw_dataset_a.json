@@ -1,0 +1,68 @@
+{
+	"name": "raw_dataset_a",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage4",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "bank_users_info_group_a.csv",
+				"container": "raw2"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "age",
+				"type": "String"
+			},
+			{
+				"name": "job",
+				"type": "String"
+			},
+			{
+				"name": "marital",
+				"type": "String"
+			},
+			{
+				"name": "education",
+				"type": "String"
+			},
+			{
+				"name": "default",
+				"type": "String"
+			},
+			{
+				"name": "housing",
+				"type": "String"
+			},
+			{
+				"name": "loan",
+				"type": "String"
+			},
+			{
+				"name": "contact",
+				"type": "String"
+			},
+			{
+				"name": "month",
+				"type": "String"
+			},
+			{
+				"name": "day_of_week",
+				"type": "String"
+			},
+			{
+				"name": "unique_id",
+				"type": "String"
+			}
+		]
+	}
+}

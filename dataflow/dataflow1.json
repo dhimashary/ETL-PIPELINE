@@ -1,0 +1,79 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "raw_dataset_a",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "raw_dataset_b",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "filter1"
+				},
+				{
+					"name": "join1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          age as string,",
+				"          job as string,",
+				"          marital as string,",
+				"          education as string,",
+				"          default as string,",
+				"          housing as string,",
+				"          loan as string,",
+				"          contact as string,",
+				"          month as string,",
+				"          day_of_week as string,",
+				"          unique_id as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source(output(",
+				"          duration as string,",
+				"          campaign as string,",
+				"          pdays as string,",
+				"          previous as string,",
+				"          poutcome as string,",
+				"          {emp.var.rate} as string,",
+				"          {cons.price.idx} as string,",
+				"          {cons.conf.idx} as string,",
+				"          euribor3m as string,",
+				"          {nr.employed} as string,",
+				"          y as string,",
+				"          unique_id as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source2",
+				"source1 filter(!isNull(\"age\") || !isNull(\"job\") || !isNull(\"education\") || !isNull(\"default\") || !isNull(\"housing\") || !isNull(\"loan\") || !isNull(\"contact\") || !isNull(\"month\") ",
+				"",
+				"",
+				"",
+				"",
+				") ~> filter1",
+				"filter1, source2 join(source1@unique_id == source2@unique_id,",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1"
+			]
+		}
+	}
+}
