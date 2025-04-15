@@ -76,6 +76,8 @@
 			{
 				"name": "dataflow1",
 				"type": "ExecuteDataFlow",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "Copy data1",
@@ -107,8 +109,6 @@
 			{
 				"name": "Azure Function1",
 				"type": "AzureFunctionActivity",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "dataflow1",
@@ -124,7 +124,19 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"functionName": "dfengdstweu0001",
+					"body": {
+						"value": "@activity('dataflow1').output",
+						"type": "Expression"
+					},
+					"method": "POST"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureFunction1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"parameters": {
