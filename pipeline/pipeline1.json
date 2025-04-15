@@ -60,6 +60,16 @@
 				]
 			}
 		],
+		"parameters": {
+			"url_param": {
+				"type": "string",
+				"defaultValue": "https://github.com/ruddra/hackathon-dataset/blob/main/bank_users_info_group_b.csv"
+			},
+			"file_name": {
+				"type": "string",
+				"defaultValue": "bank_users_info_group_b.csv"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2025-04-15T13:11:42Z"
 	},
