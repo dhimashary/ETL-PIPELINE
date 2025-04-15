@@ -3,7 +3,16 @@
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "HttpServer2",
-			"type": "LinkedServiceReference"
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"url_param_csv": "https://github.com/ruddra/hackathon-dataset/blob/main/bank_users_info_group_a.csv"
+			}
+		},
+		"parameters": {
+			"url_param": {
+				"type": "string",
+				"defaultValue": "https://github.com/ruddra/hackathon-dataset/blob/main/bank_users_info_group_b.csv"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
