@@ -1,0 +1,9 @@
+{
+	"name": "engdst2024-hackaton",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b407aa0d-5a76-4a41-8ccc-e806e36da2fd",
+		"tenantId": "cc7df247-60ce-4a0f-9d75-704cf60efc64"
+	}
+}
