@@ -126,7 +126,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"functionName": "dfengdstweu0001",
+					"functionName": "http_trigger",
 					"body": {
 						"value": "@activity('dataflow1').output",
 						"type": "Expression"
